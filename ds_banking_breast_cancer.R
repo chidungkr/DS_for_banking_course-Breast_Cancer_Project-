@@ -181,6 +181,8 @@ confusionMatrix(pred1, test$classes, positive = "M")
 set.seed(123)
 tune_svm <- svm(classes ~., 
                 data = train,
+                method = "C-classification", 
+                kernel = "radial",
                 cost = 10, 
                 gamma = 0.01)
 
